@@ -1,0 +1,77 @@
+% =====================================================================
+%  Preámbulo compartido — Trabajo de grado, Ingeniería Física, EAFIT
+%  Formato exigido: página Carta, márgenes sup/izq/der 3 cm e inf 2 cm,
+%  interlineado 1.5, Arial 11 pt (o equivalente), citación IEEE.
+%
+%  Compatible con dos motores:
+%    - pdfLaTeX  -> Overleaf (usa Helvetica, clon métrico de Arial)
+%    - XeLaTeX   -> Tectonic local (usa el Arial real del sistema)
+% =====================================================================
+
+% ---------- Motor y tipografía ----------
+% Helvetica (clon métrico de Arial) vía NFSS: funciona igual en pdfLaTeX y en
+% XeLaTeX/Tectonic, de modo que el PDF local y el de Overleaf son idénticos.
+% inputenc solo aplica a pdfLaTeX; XeLaTeX ya es UTF-8 nativo.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+\fi
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- Idioma ----------
+\usepackage[spanish,es-nodecimaldot]{babel}
+
+% ---------- Geometría de página ----------
+\usepackage[letterpaper,top=3cm,left=3cm,right=3cm,bottom=2cm]{geometry}
+
+% ---------- Interlineado 1.5 ----------
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------- Paquetes de apoyo ----------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+% Rutas donde LaTeX busca las imágenes (relativas a la raíz del repo)
+\graphicspath{{assets/figuras/}{assets/fotos/}{assets/logos/}}
+
+\sisetup{output-decimal-marker={,},group-separator={.},group-minimum-digits=4,input-decimal-markers={.,}}
+
+% ---------- Estilo de títulos ----------
+\titleformat{\section}{\normalfont\bfseries\large}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\bfseries\normalsize}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{2pt}
+
+% ---------- Encabezado y pie ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\footnotesize Escuela de Ciencias Aplicadas e Ingeniería}
+\fancyhead[R]{\footnotesize Programa de Ingeniería Física}
+\fancyfoot[C]{\footnotesize\thepage}
+
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.2em}
+\setlist[enumerate]{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.6em}
+
+% ---------- Atajos del proyecto ----------
+\newcommand{\cop}[1]{\$\,\num{#1}}
+
+% Datos institucionales (se pueden sobrescribir en cada main.tex)
+\providecommand{\docTipo}{DOCUMENTO DE TRABAJO DE GRADO}
+\providecommand{\docTitulo}{Título del documento}
+\providecommand{\docFecha}{\today}
+\providecommand{\docAutor}{Alexander Saldarriaga Vélez}
+\providecommand{\docAsesor}{Hugo Alberto Murillo Hoyos}
+\providecommand{\docCoordinador}{Elena Montilla Rosero}

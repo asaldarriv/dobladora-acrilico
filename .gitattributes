@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.tex   text diff=tex
+*.bib   text
+*.ino   text
+*.py    text diff=python
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.step  binary
+*.stl   binary

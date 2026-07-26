@@ -1,0 +1,50 @@
+% =====================================================================
+%  ANTEPROYECTO — Trabajo de grado, Ingeniería Física, Universidad EAFIT
+%  Entrega: semana 3 (27 de julio de 2026)
+%
+%  Compilar desde la RAÍZ del repositorio:
+%      uv run tdg build anteproyecto
+%  o directamente:
+%      tectonic -X compile docs/anteproyecto/main.tex --outdir build/anteproyecto
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\newcommand{\docTipo}{ANTEPROYECTO DE TRABAJO DE GRADO}
+\newcommand{\docTitulo}{Dobladora automática de láminas de acrílico de pequeño formato\\[0.25cm]
+con control de temperatura y selección de ángulo y posición de doblez}
+\newcommand{\docFecha}{27 de julio de 2026}
+
+\input{docs/comun/preambulo}
+
+\begin{document}
+
+% ---- Portada (no cuenta en el límite de 5 páginas) ----
+\input{docs/comun/portada}
+
+% ---- Índice (no cuenta en el límite de 5 páginas) ----
+\pagenumbering{roman}
+\singlespacing
+\tableofcontents
+\clearpage
+\onehalfspacing
+
+% ---- Contenido efectivo: máximo 5 páginas ----
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{docs/anteproyecto/secciones/01-titulo}
+\input{docs/anteproyecto/secciones/02-asesor}
+\input{docs/anteproyecto/secciones/03-planteamiento}
+\input{docs/anteproyecto/secciones/04-antecedentes}
+\input{docs/anteproyecto/secciones/05-objetivos}
+\input{docs/anteproyecto/secciones/06-justificacion}
+\input{docs/anteproyecto/secciones/07-metodologia}
+\input{docs/anteproyecto/secciones/08-cronograma}
+\input{docs/anteproyecto/secciones/09-presupuesto}
+\input{docs/anteproyecto/secciones/10-alcance-productos}
+\input{docs/anteproyecto/secciones/11-propiedad-intelectual}
+
+% ---- Bibliografía (no cuenta en el límite de 5 páginas) ----
+\input{docs/comun/bibliografia}
+
+\end{document}
