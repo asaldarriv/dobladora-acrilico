@@ -20,6 +20,28 @@
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
+% XeLaTeX/LuaLaTeX leen UTF-8 nativo, pero con fuentes de 8 bits (T1) pasan el
+% carácter directo a la ranura del mismo número. En el rango U+00A0-U+00BF el
+% Cork encoding no coincide con Latin-1, así que «¿» salía como «£» y «¡» como
+% «a». Se mapean esos caracteres a sus comandos LICR; en pdfLaTeX ya lo hace
+% inputenc, por eso el bloque va sólo en el otro motor.
+\ifPDFTeX\else
+  \usepackage{newunicodechar}
+  \newunicodechar{¡}{\textexclamdown}
+  \newunicodechar{¿}{\textquestiondown}
+  \newunicodechar{«}{\guillemotleft}
+  \newunicodechar{»}{\guillemotright}
+  \newunicodechar{ª}{\textordfeminine}
+  \newunicodechar{º}{\textordmasculine}
+  \newunicodechar{°}{\textdegree}
+  \newunicodechar{±}{\textpm}
+  \newunicodechar{µ}{\textmu}
+  \newunicodechar{·}{\textperiodcentered}
+  \newunicodechar{§}{\S}
+  \newunicodechar{©}{\textcopyright}
+  \newunicodechar{®}{\textregistered}
+\fi
+
 % ---------- Idioma ----------
 \usepackage[spanish,es-nodecimaldot]{babel}
 

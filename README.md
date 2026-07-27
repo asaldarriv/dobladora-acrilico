@@ -83,6 +83,7 @@ Los límites se declaran en `pyproject.toml`, en `[tool.tdg.documents.*]`.
 │   ├── cli.py                 #   comando `tdg`
 │   ├── latex.py               #   compilación (Tectonic / latexmk / xelatex)
 │   ├── verify.py              #   verificación del límite de páginas
+│   ├── figures/               #   figuras generadas por código (cronograma…)
 │   └── analysis/              #   análisis de datos experimentales
 ├── firmware/dobladora/        # código Arduino
 ├── hardware/                  # CAD, electrónica, BOM
@@ -108,6 +109,21 @@ Guárdala en `assets/figuras/` y en el `.tex` escribe solo el nombre:
 El preámbulo ya declara `\graphicspath` con `assets/figuras/`, `assets/fotos/` y
 `assets/logos/`, así que no hace falta escribir la ruta completa. Prefiere PDF o
 SVG para gráficas (vectorial) y JPG para fotos.
+
+### Figuras generadas por código
+
+Las figuras que se construyen a partir de datos viven en `src/tdg/figures/` y
+escriben su PDF en `assets/figuras/`. El PDF resultante se versiona, de modo que
+compilar el documento no exige tener matplotlib instalado.
+
+```powershell
+uv run --extra analisis python -m tdg.figures.schedule        # assets/figuras/cronograma.pdf
+uv run --extra analisis python -m tdg.figures.schedule --png  # vista rápida
+```
+
+Para replanear el cronograma, edita `ACTIVITIES`, `MILESTONES` o el calendario
+(`WEEK_1_MONDAY`, `BREAK_AFTER_WEEK`) en `src/tdg/figures/schedule.py` y vuelve a
+ejecutar el comando.
 
 ### Cómo agregar un documento nuevo
 
