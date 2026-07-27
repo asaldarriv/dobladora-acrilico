@@ -3,8 +3,9 @@
 Motor preferido: Tectonic (binario único, descarga los paquetes que haga falta).
 Alternativas automáticas si Tectonic no está: latexmk, xelatex o pdflatex.
 
-Todas las compilaciones se ejecutan desde la RAÍZ del repositorio y con
-TEXINPUTS apuntando a ella, de modo que rutas como
+Todas las compilaciones se ejecutan desde la RAÍZ del repositorio, con
+TEXINPUTS apuntando a ella (latexmk / xelatex / pdflatex) o con
+`-Z search-path` (Tectonic, que no lee TEXINPUTS), de modo que rutas como
 `\\input{docs/comun/preambulo}` funcionen sin importar desde dónde se invoque.
 """
 
@@ -31,9 +32,12 @@ class Engine:
         out = outdir.as_posix()
         match self.name:
             case "tectonic":
+                # Tectonic ignora TEXINPUTS y resuelve las rutas relativas al
+                # directorio del .tex principal; -Z search-path añade la raíz.
                 return [
                     self.executable, "-X", "compile", rel,
                     "--outdir", out, "--keep-logs", "--synctex",
+                    "-Z", f"search-path={root}",
                 ]
             case "latexmk":
                 return [

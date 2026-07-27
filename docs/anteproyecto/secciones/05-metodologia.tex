@@ -1,0 +1,15 @@
+\section{Metodología}
+
+Trabajo aplicado y experimental, en seis fases que corresponden a los objetivos específicos; cada fase cierra con el ensayo que verifica su requerimiento.
+
+\noindent\textbf{F1. Caracterización térmica y mecánica.} Banco de ensayo con termopares tipo K acondicionados por MAX31855 y termómetro infrarrojo, para registrar temperatura contra tiempo en ambas caras y a distancias laterales conocidas de la línea, en los tres espesores. El \emph{springback} se mide con goniómetro digital sobre probetas plegadas a \SI{90}{\degree}, con un diseño factorial de tres niveles en espesor, temperatura de consigna y tiempo de sostenimiento, con réplicas y orden de corrida aleatorizado \cite{montgomery2019}; el ajuste resultante alimenta la compensación del controlador.
+
+\noindent\textbf{F2. Subsistema térmico.} Modelo de conducción transitoria unidimensional a través del espesor, con fronteras de radiación y convección \cite{incropera2011}, para estimar potencia lineal y tiempo de calentamiento. Sobre esa base se selecciona el calefactor —resistencia tubular en canal reflector de aluminio, comparada contra nicromo tensado y cinta calefactora por uniformidad, inercia térmica, costo y seguridad— y se dimensionan aislamiento y sensor, verificando la uniformidad longitudinal con termopares distribuidos e imagen térmica.
+
+\noindent\textbf{F3. Diseño mecánico.} Modelado CAD de estructura, sujeción de la lámina, tope de posicionamiento longitudinal motorizado y ala de plegado con motor paso a paso y reductor, dimensionado a partir del par requerido para plegar en estado gomoso estimado en F1. Fabricación en el taller de la Universidad con perfilería de aluminio estructural.
+
+\noindent\textbf{F4. Control e interfaz.} Identificación del conjunto calefactor--lámina como sistema de primer orden con retardo mediante ensayo de escalón, y sintonización de un PID discreto en Arduino con relé de estado sólido y protección por sobretemperatura \cite{astrom2006}. El plegado se programa como máquina de estados con compensación de \emph{springback} y enfriamiento bajo restricción.
+
+\noindent\textbf{F5. Integración y construcción.} Ensamble mecánico, cableado de potencia y señal en gabinete, paro de emergencia, protecciones eléctricas y guardas térmicas, y puesta en marcha con pruebas incrementales de subsistema antes de la prueba de conjunto.
+
+\noindent\textbf{F6. Validación y entrega.} Repeticiones por combinación de espesor y ángulo (\num{45}, \num{90} y \SI{120}{\degree}) en el número fijado en el objetivo~6, midiendo ángulo con goniómetro digital y posición con calibrador; se reportan media, desviación estándar e incertidumbre expandida según la GUM \cite{gum2008} y se evalúa la calidad óptica contra patrón. Se elaboran el manual de operación y mantenimiento y la documentación de entrega.
