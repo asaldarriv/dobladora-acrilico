@@ -61,6 +61,9 @@ ACTIVITIES = [
     Activity("F5. Fabricación e integración", 9, 12, "development"),
     Activity("F6. Validación experimental", 11, 14, "development"),
     Activity("F7. Documentación del proyecto", 3, 15, "documentation"),
+    Activity("Redacción informe 1 de avance", 7, 8, "documentation"),
+    Activity("Redacción informe 2 de avance", 12, 14, "documentation"),
+    Activity("Redacción del informe final", 13, 15, "documentation"),
     Activity("Entrega del prototipo", 15, 16, "documentation"),
     Activity("Preparación de la defensa", 15, 18, "documentation"),
 ]
@@ -93,7 +96,7 @@ LABELS = {
 }
 
 WIDTH_IN = 6.14      # = 15,6 cm de \linewidth: la figura se inserta sin escalar
-HEIGHT_IN = 3.1
+HEIGHT_IN = 3.65     # crece con el número de filas: mantiene el paso vertical
 BAR_WIDTH_PT = 5.0
 BLOCK_GAP = 0.8      # filas en blanco entre actividades e hitos
 TOP_MARGIN = 1.1     # filas libres arriba, para la marca del receso
