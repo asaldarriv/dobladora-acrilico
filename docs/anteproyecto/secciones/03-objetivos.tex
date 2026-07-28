@@ -1,11 +1,11 @@
 \section{Objetivos de la propuesta}
 
-\noindent\textbf{Objetivo general.} Diseñar, construir y validar experimentalmente una máquina automática de doblado por línea térmica para láminas de acrílico de hasta \SI{25}{\centi\meter} de longitud de doblez y espesores de \SIrange{3}{6}{\milli\meter}, con control realimentado de temperatura e interfaz táctil para seleccionar ángulo y posición, destinada al Laboratorio de Mecatrónica de la Universidad EAFIT.
+\noindent\textbf{Objetivo general.} Diseñar, construir y validar experimentalmente una máquina automática de doblado por línea térmica para láminas de acrílico de hasta \SI{25}{\centi\meter} de longitud de doblez y espesores de \SIrange{1}{10}{\milli\meter}, con control realimentado de temperatura e interfaz táctil en la que el usuario fija el ángulo del doblez y la posición de la línea de doblez sobre la placa, destinada al Laboratorio de Mecatrónica de la Universidad EAFIT.
 
 \noindent\textbf{Objetivos específicos.}
 \begin{enumerate}
-\item Caracterizar la ventana de conformado del PMMA para espesores de \num{3}, \num{4.5} y \SI{6}{\milli\meter}, obteniendo curvas de temperatura contra tiempo, ancho de franja plastificada y \emph{springback} frente a temperatura y tiempo de sostenimiento.
-\item Diseñar el subsistema térmico —resistencia, canal reflector, aislamiento y sensado— con un modelo de transferencia de calor validado con termopares, de modo que la franja se mantenga dentro de \SI{\pm 5}{\celsius} en los \SI{25}{\centi\meter}.
+\item Caracterizar la ventana de conformado del PMMA para espesores de \num{1} a \SI{10}{\milli\meter}, obteniendo curvas de temperatura contra tiempo, ancho de franja plastificada y \emph{springback} frente a temperatura y tiempo de sostenimiento.
+\item Diseñar el subsistema térmico —resistencia, canal reflector, aislamiento y sensado— con un modelo de transferencia de calor validado con termopares, de modo que la franja se mantenga dentro de \SI{\pm 2}{\celsius} en los \SI{25}{\centi\meter}.
 \item Diseñar e implementar el subsistema electromecánico de sujeción, posicionamiento longitudinal y plegado motorizado, con resolución angular y de posición iguales o mejores que \SI{0.5}{\degree} y \SI{0.5}{\milli\meter}.
 \item Implementar en Arduino el lazo PID de temperatura, la secuencia de plegado con compensación de \emph{springback} y la interfaz táctil de selección de espesor, ángulo y posición.
 \item Integrar, construir y poner en marcha el prototipo, con los elementos de seguridad eléctrica y térmica exigidos en un laboratorio docente.

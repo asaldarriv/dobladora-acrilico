@@ -60,7 +60,7 @@ ACTIVITIES = [
     Activity("F4. Control PID e interfaz", 9, 12, "development"),
     Activity("F5. Fabricación e integración", 9, 12, "development"),
     Activity("F6. Validación experimental", 11, 14, "development"),
-    Activity("Redacción del informe final", 3, 15, "documentation"),
+    Activity("F7. Documentación del proyecto", 3, 15, "documentation"),
     Activity("Entrega del prototipo", 15, 16, "documentation"),
     Activity("Preparación de la defensa", 15, 18, "documentation"),
 ]
